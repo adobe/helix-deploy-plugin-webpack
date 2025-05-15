@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "test": "c8 mocha -i -g Integration --spec=test/**/*.test.js",
-    "integration-ci": "c8 mocha -g Integration --spec=test/**/*.test.js",
     "lint": "eslint .",
     "semantic-release": "semantic-release",
     "semantic-release-dry": "semantic-release --dry-run --branches $CI_BRANCH",
