@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe/helix-deploy-plugin-webpack"
+    "url": "https://github.com/adobe/helix-deploy-plugin-webpack.git"
   },
   "author": "",
   "license": "Apache-2.0",
