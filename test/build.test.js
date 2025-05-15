@@ -67,7 +67,8 @@ describe('Build Test', () => {
     await fse.remove(testRoot);
   });
 
-  async function generate(buildArgs, testProject = PROJECT_SIMPLE) {
+  async function generate(opts = {}) {
+    const { buildArgs = ['--esm', 'false'], testProject = PROJECT_SIMPLE } = opts;
     await fse.copy(testProject, testRoot);
     // need to change .cwd() for yargs to pickup `wsk` in package.json
     process.chdir(testRoot);
@@ -138,11 +139,11 @@ describe('Build Test', () => {
   }
 
   it('generates the bundle (webpack)', async () => {
-    await generate([]);
+    await generate();
   }).timeout(15000);
 
   it('generates the bundle (webpack, wsk conf name)', async () => {
-    await generate([], path.resolve(__rootdir, 'test', 'fixtures', 'simple-conf-wsk'));
+    await generate({ testProject: path.resolve(__rootdir, 'test', 'fixtures', 'simple-conf-wsk') });
   }).timeout(15000);
 
   it('invalid bundle fails the build', async () => {
@@ -151,6 +152,9 @@ describe('Build Test', () => {
     process.chdir(testRoot);
     const builder = await new CLI()
       .prepare([
+        '--plugin', path.resolve(__rootdir, 'src', 'index.js'),
+        '--bundler', 'webpack',
+        '--esm', 'false',
         '--target', 'aws',
         '--verbose',
         '--directory', testRoot,
@@ -162,10 +166,10 @@ describe('Build Test', () => {
   }).timeout(15000);
 
   it('generates the bundle (webpack, esm project)', async () => {
-    await generate([], PROJECT_SIMPLE_ESM);
+    await generate({ testProject: PROJECT_SIMPLE_ESM });
   }).timeout(15000);
 
   it('generates the bundle (esm, webpack) fails', async () => {
-    await assert.rejects(generate(['--esm']), Error('Webpack bundler does not support ESM builds.'));
+    await assert.rejects(generate({ buildArgs: ['--esm', 'true'] }), Error('Webpack bundler does not support ESM builds.'));
   }).timeout(5000);
 });
