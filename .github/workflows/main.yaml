@@ -5,6 +5,12 @@ env:
   CI_BUILD_NUM: ${{ github.run_id }}
   CI_BRANCH: ${{ github.ref_name }}
 
+permissions:
+  id-token: write
+  contents: write  # semantic-release-dry verifies the write permissions
+  issues: read # needed by semantic-release
+  pull-requests: write # needed by semantic-release
+
 jobs:
   test:
     name: Test
@@ -16,17 +22,6 @@ jobs:
         with:
           node-version: '22.x'
       - run: npm install
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-region: us-east-1
-          role-to-assume: arn:aws:iam::118435662149:role/helix-gh-deploy-config-service
-      - name: Fetch AWS Secrets
-        uses: aws-actions/aws-secretsmanager-get-secrets@v2
-        with:
-          parse-json-secrets: true
-          secret-ids: |
-            ,/helix/github-action-secrets
       - run: npm test
       - name: Semantic Release (Dry Run)
         run: npm run semantic-release-dry
