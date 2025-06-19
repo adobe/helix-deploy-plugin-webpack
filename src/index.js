@@ -15,3 +15,5 @@ import WebpackBundler from './WebpackBundler.js';
 export const plugins = [
   WebpackBundler,
 ];
+
+export { WebpackBundler };
