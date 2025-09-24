@@ -39,7 +39,7 @@
     "lint-staged": "16.1.6",
     "mocha": "11.7.2",
     "mocha-multi-reporters": "1.5.1",
-    "semantic-release": "24.2.7",
+    "semantic-release": "24.2.8",
     "yauzl": "3.2.0"
   },
   "lint-staged": {
