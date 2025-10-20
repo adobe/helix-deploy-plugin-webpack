@@ -37,7 +37,7 @@
     "eslint": "9.4.0",
     "husky": "9.1.7",
     "lint-staged": "16.2.3",
-    "mocha": "11.7.2",
+    "mocha": "11.7.4",
     "mocha-multi-reporters": "1.5.1",
     "semantic-release": "25.0.0",
     "yauzl": "3.2.0"
