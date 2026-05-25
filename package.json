@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "3.0.27",
-    "@eslint/config-helpers": "0.5.5",
+    "@eslint/config-helpers": "0.6.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "13.1.5",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "chalk-template": "1.1.2",
-    "fs-extra": "11.3.4",
+    "fs-extra": "11.3.5",
     "webpack": "5.106.2"
   }
 }
