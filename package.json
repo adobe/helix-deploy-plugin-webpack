@@ -36,11 +36,11 @@
     "c8": "11.0.0",
     "eslint": "9.4.0",
     "husky": "9.1.7",
-    "lint-staged": "17.0.4",
-    "mocha": "11.7.5",
+    "lint-staged": "17.0.5",
+    "mocha": "11.7.6",
     "mocha-multi-reporters": "1.5.1",
     "semantic-release": "25.0.3",
-    "yauzl": "3.3.0"
+    "yauzl": "3.3.1"
   },
   "lint-staged": {
     "*.js": "eslint",
@@ -53,6 +53,6 @@
   "dependencies": {
     "chalk-template": "1.1.2",
     "fs-extra": "11.3.5",
-    "webpack": "5.106.2"
+    "webpack": "5.107.2"
   }
 }
