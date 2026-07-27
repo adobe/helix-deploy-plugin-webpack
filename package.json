@@ -39,7 +39,7 @@
     "lint-staged": "17.0.8",
     "mocha": "11.7.6",
     "mocha-multi-reporters": "1.5.1",
-    "semantic-release": "25.0.5",
+    "semantic-release": "25.0.7",
     "yauzl": "3.4.0"
   },
   "lint-staged": {
@@ -53,6 +53,6 @@
   "dependencies": {
     "chalk-template": "1.1.2",
     "fs-extra": "11.3.6",
-    "webpack": "5.108.3"
+    "webpack": "5.108.4"
   }
 }
