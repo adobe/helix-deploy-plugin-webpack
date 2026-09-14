@@ -53,6 +53,6 @@
   "dependencies": {
     "chalk-template": "1.1.2",
     "fs-extra": "11.4.0",
-    "webpack": "5.109.2"
+    "webpack": "5.110.2"
   }
 }
